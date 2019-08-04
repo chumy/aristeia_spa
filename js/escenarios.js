@@ -1,0 +1,13 @@
+var Escenarios=[{Id:1, Name:"Asalto"},
+{Id:2, Name:"Tierra Quemada"},
+{Id:3, Name:"Conquista"},
+{Id:4, Name:"Rey de la Colina"},
+{Id:5, Name:"Masacre"},
+{Id:6, Name:"Blitz"},
+{Id:7, Name:"Captura la Bandera"},
+{Id:8, Name:"Blanco Humano"},
+{Id:9, Name:"Witch Land"},
+{Id:10, Name:"Danza Frenética"},
+{Id:11, Name:"Broken Land"},
+{Id:12, Name:"Puertas de Fuego"},
+]

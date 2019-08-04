@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aristeia :: Tools</title>
+</head>
+<body>
+    <header class="center">
+   
+ 
+        <nav id="nav" class="blue-grey darken-4 nav-extended" >
+            <div class="container">
+             <div class="nav-wrapper">
+                        <a href="/aristeia/test/" class="center brand-logo logo">
+                <img class="responsive-img"  src="../images/aristeia_logo.png">
+            </a>
+          </div>
+          <div class="nav-content panel" id="panel-nav">
+            <ul class="tabs tabs-transparent">
+              <li class="tab"><a class="active" href="#tab-estilos">Estilos</a></li>
+              <li class="tab"><a href="#tab-fondos">Fondos</a></li>
+              <li class="tab"><a href="#tab-logos">Logos</a></li>
+              <li class="tab"><a href="#tab-aristos">Aristos</a></li>
+              <li class="tab"><a href="#tab-versus">Versus</a></li>
+              <li class="tab"><a href="#tab-puntuacion">Puntuación</a></li>
+            </ul>
+          </div>
+          </div>
+        </nav>
+   <h4></h4>
+
+</header>
+    <section id="main" class="container main">
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card blue-grey darken-1">
+                            <div class="card-image">
+                                <img src="../images/estilo_3.png">
+                                
+                            </div>
+                            <div class="card-content white-text">
+                              <span class="card-title cartilla sombra">Pantalla Versus</span>
+                                <p>Esta herramiento permite crear de una forma sencilla el resumen de tus partidas al estilo de pantalla de videojuegos. 
+                                  Dale un aspecto diferente a tus enfrentamientos</p>
+                            </div>
+                            <div class="card-action center">
+                                <a href="#" id="" class="waves-effect waves-light btn" onclick="initPanel();">Acceder</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                  
+
+                        <div class="col s12 m6">
+                                <div class="card blue-grey darken-1">
+                                    <div class="card-image">
+                                        <img src="../images/escaleta_1.png">
+                                    </div>
+                                  <div class="card-content white-text">
+                                    <span class="card-title sombra">Escaleta aleatoria</span>
+                                    <p>No sabes que Aristos escoger? Quieres probar alguna alineación curiosa? Un reto particular? Esta es tu herramienta!</p>
+                                  </div>
+                                  <div class="card-action center">
+                                    <a href="#" class="waves-effect waves-light btn" onclick="initEscaleta();">Acceder</a>
+                                  </div>
+                                </div>
+                              </div>
+                      </div>
+   
+    </section>
+    <!-- --------------------    PANTALLA VERSUS  ---------------------- -->
+    <section class="row panel" id="panel">
+            <div class="col s12 m6">
+                    <!-- Estilos -->
+                    <div id="tab-estilos" class="col s12 seccionpanel row blue-grey darken-1">
+                        
+                        <div><h5 class="textoPortada">Seleccione un estilo</h5></div>
+                        <div id="estilos_disponibles" class="row"></div>
+                        
+                    </div>
+                    <!-- LOGOS -->
+                    <div id="tab-logos" class="col s12 seccionpanel row blue-grey darken-1">
+                        <div><h5>Selección de Logos (opcional)</h5></div>
+
+                        <div id="logo1" class="row col s12">
+                          <div id="logo1_file"> 
+                            
+                            <div class="file-field input-field">
+                            <div class="btn">
+                              <span>Subir Logo Equipo 1</span>
+                              <input type="file" id="id1" onchange="loadComponente(this.id)">
+                            </div>
+                            <div class="file-path-wrapper">
+                              <input class="file-path validate" type="text" >
+                            </div>
+                          </div>
+
+                          </div>
+                          <div id="logo1_selector"> 
+                            <a class="waves-effect waves-light btn modal-trigger" href="#modal1"  onclick="loadLogos(1)">
+                              Logos Disponibles - Equipo 1</a>
+                          </div>
+                          <div id="div_img_1" class="col s6">
+                            <img src="" id="img_id1" class="canvas" height="200" alt="Image preview..."  style="display:none">
+                          </div>
+                        </div>
+
+                        <div id="logo2" class="row col s12">
+                          <div id="logo2_file"> 
+                            
+                            <div class="file-field input-field">
+                            <div class="btn">
+                              <span>Subir Logo Equipo 2</span>
+                              <input type="file" id="id2" onchange="loadComponente(this.id)">
+                            </div>
+                            <div class="file-path-wrapper">
+                              <input class="file-path validate" type="text" >
+                            </div>
+                          </div>
+
+                          </div>
+                          <div id="logo1_selector"> 
+                            <a class="waves-effect waves-light btn modal-trigger" href="#modal1"  onclick="loadLogos(2)">
+                              Logos Disponibles - Equipo 2</a>
+                          </div>
+                          <div id="div_img_2" class="col s6">
+                            <img src="" id="img_id2" class="canvas" height="200" alt="Image preview..."  style="display:none">
+                          </div>
+                        </div>
+                        
+                    </div>
+                    <!-- FONDOS -->
+                    <div id="tab-fondos" class="col s12 seccionpanel row blue-grey darken-1">
+
+                            <h5 class="textoPortada">Selección de fondo (opcional)</h5>
+                            <div id="fondos_disponibles"></div>
+                          <div id="background" class="row col s12">
+                            <h6>Fondo (redimensionado a 1280x800) </h6>
+                            <div class="file-field input-field">
+                              <div class="btn">
+                                <span>Subir Fondo</span>
+                                <input type="file" id="id3" onchange="loadComponente(this.id)">
+                              </div>
+                              <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" >
+                              </div>
+                            </div>
+                            
+                          <div id="div_img_3" class="row col">
+                            <img src="" id="img_id3" class="canvas" alt="Image preview..." height="200" style="display:none" >
+                          </div>
+                          
+                        </div>
+                      
+                    </div>
+                    <!-- Aristos -->
+                    <div id="tab-aristos" class="col s12 seccionpanel row blue-grey darken-1">
+
+                        <div><h5 class="textoPortada">Elige aristos (opcional)</h5></div>
+                        <div class="col s12 row">
+                          <a class="waves-effect waves-light btn modal-trigger" href="#modal1" onclick="loadSelector(1)">Equipo 1</a>
+                        </div>
+                        <div id="equipo1" class="col s12 row"></div>
+                        <div class="col s12 row">
+                          <a class="waves-effect waves-light btn modal-trigger" href="#modal1" onclick="loadSelector(2)">Equipo 2</a>
+                        </div>
+                        <div id="equipo2" class="col s12 row"></div>                   
+                    </div>
+                      
+                    <!-- Versus -->
+                    <div id="tab-versus" class="col s12 seccionpanel row blue-grey darken-1">
+                      <h5 class="textoPortada">Selección de tipografia Vs (opcional)</h5>
+                      <div id="versus_disponibles" class="row"></div>
+                      
+                    </div>
+                    <!-- Puntuacion -->
+                    <div id="tab-puntuacion" class="col s12 seccionpanel row blue-grey darken-1">
+                      <h5 class="textoPortada">Puntuación (opcional)</h5>
+			<div id="puntuaciones_disponibles">
+				<div class="divsmedio border_verde" >
+    				<h6>Equipo 1</h6>
+	    			<div class="divsfull ">
+		    			<span>Puntuación:</span>
+		    			<select id='punt1' onchange="setPunt1(this[this.selectedIndex].value);">
+		    				
+		    			</select>
+		    		</div>
+		    		<div class="divsfull">
+		    			<span>Frags:</span>
+		    			<select id='frag1' onchange="setFrag1(this[this.selectedIndex].value);">
+
+		    			</select>
+	    			</div>
+    			</div>
+
+    			<div class="divsmedio border_naranja" >
+	    			<h6>Equipo 2</h6>
+		    			<div class="divsfull ">
+		    			<span>Puntuación:
+		    			<select id='punt2' onchange="setPunt2(this[this.selectedIndex].value);">
+		    			
+		    			</select></span>
+		    		</div>
+		    		<div class="divsfull">
+		    			<span>Frags:
+		    			<select id='frag2' onchange="setFrag2(this[this.selectedIndex].value);">
+
+		    			</select></span>
+		    		</div>
+    			</div>
+                    </div>
+                  </div>
+            </div>   
+            
+            <!-- Resultado -->
+            <div class="col s12 m6 row blue-grey darken-1">
+            
+              <div class="seccionpanel col s12 blue-grey darken-1">
+                
+                <h5>Pantalla Versus</h5>
+                <div id="imagen" class="row"></div>
+
+                <div class="col s12 row">
+                  <h6 id="panel-message"></h6>
+                </div>
+                <div class="card-action center row" id="botonera">
+                    <!-- div class="card-action" id="boton-regenerar">
+                      <a href="#" id="" class="waves-effect waves-light btn" onclick="updatePanel();">Regenerar</a>
+                    </div>
+                  
+                    <div class="card-action" id="boton-download">
+                      <a href="#" id="download" download="encuentro.png" class="waves-effect waves-light btn" onclick="downloadImage();">Guardar</a>
+                    </div-->
+                    <a href="#" id="" class="waves-effect waves-light btn" onclick="updatePanel();">Regenerar</a>
+                    <a href="#" id="download" download="encuentro.png" class="waves-effect waves-light btn" onclick="downloadImage();">Guardar</a>
+                </div>
+              
+                <div id="myCanvas" class="canvas col row"></div>
+            </div>
+            </div>
+    </section>
+    <!-- --------------------    ESCALETA ALEATORIA ---------------------- -->
+    <section class=" escaleta row " id="escaleta">
+    
+     
+        <div class="row col s10 offset-s1">
+            
+
+          <div class="col s12 m6">
+            <div class="card blue-grey darken-1">
+                <div class="card-content" >
+                    <span class="card-title" id="expansiones" >Expansiones</span>
+                    <div class="card-action">
+                        <a href="#" id="bttn_select_exps" class="waves-effect waves-light btn" onclick="checkAll('checkexpansion');">Seleccionar Todo</a>
+                    </div>
+                </div>
+            </div>
+          </div>
+          
+          <div class="col s12 m6">
+            <div class="card blue-grey darken-1">
+                <div class="card-content" id="mods" >
+                    <span class="card-title">Mods</span>
+                </div>
+            </div>
+          </div>
+     
+      
+
+     
+    
+    <div id="submitdiv" class="row col s12 center" >
+      <a href="#" id="bttn_escaleta" class="waves-effect waves-light btn" onclick="generarEscaleta();">Generar Escaleta</a>
+    </div>
+  
+    <div id="emparejamiento" class="col s12 " >
+      <div class="card blue-grey darken-1">
+        <div class="card-content row"  >
+          <h5 class="textoPortada">Emparejamiento</h5>
+        
+        <div id="equipo_verde_cont" class="col s12 m6">
+            <div class="card green lighten-3">
+                <div class="card-content" >
+                    <span class="card-title verde">Equipo 1</span>
+                    <div id="equipo_verde" class="card-content row"></div>
+                </div>
+            </div>
+        </div>
+  
+        <div id="equipo_naranja_cont" class="col s12 m6">
+            <div class="card">
+                <div class="card-content orange lighten-3">
+                    <span class="card-title naranja" >Equipo 2</span>
+                    <div id="equipo_naranja" class="card-content row"></div>
+                </div>
+            </div>
+        </div>
+  
+        <div id="error" class="col s12" ></div>
+      </div>
+
+      </div>
+    </div>
+</div>
+    </section>
+    <!-- Modal -->
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content" id="modalContent">
+        
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+    </div>
+  </div>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <!--script
+  src="https://code.jquery.com/jquery-3.4.1.slim.js"
+  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+  crossorigin="anonymous"></script-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="../js/aristos.js"></script>
+    <script src="../js/logos.js"></script>
+    <script src="../js/estilos.js"></script>
+    <script src="../js/versus.js"></script>
+    <script src="../js/fondos.js"></script>
+    <script src="../js/expansiones.js"></script>
+    <script src="../js/escenarios.js"></script>
+    <script src="../js/mods.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/aristeia.js"></script>
+    
+    <link href="css/aristeia.css" rel="stylesheet">
+
+
+</body>
+</html>
+

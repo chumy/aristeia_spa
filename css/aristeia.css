@@ -1,0 +1,117 @@
+
+.collapsible li.disabled .collapsible-body {
+  display: none !important; /*or using id of the app to avoid the use of !important*/
+}
+
+.collapsible li.disabled .collapsible-header {
+  background: rgb(221,221,221);
+}
+
+
+@font-face {
+  font-family: 'SFSportsNight';
+  src: url('../../fonts/SFSportsNight.ttf');
+}
+
+body {
+  padding: 0;
+  background: url('../../images/textura.jpg') 0 0 repeat;
+  /*background-color: #000;
+  color: #fff;
+  font-family: HemiHead,lato,sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: .5px;
+  font-size: 16px;*/
+}
+
+.nonSelected {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+
+}
+
+.nonSelected:hover {
+  -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(0%);
+}
+
+.listalogos{
+  width: 18%;
+  height: 18%;
+  display: block;
+  /*max-width:200px;*/
+  float:left;
+}
+
+.selected {
+    
+}
+
+.collapsible-body {
+  background-color: white;
+}
+
+
+.seccionpanel {
+  background: white;
+}
+
+.canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.canvas:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.canvasLayer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  display: inline-block;
+  height: 100%;
+}
+
+.sombra {
+text-shadow: 3px 3px  black;
+font-family: 'SFSportsNight';
+color : white
+}  
+
+/*.textoPortada {
+  /*font-family: HemiHead,lato,sans-serif;
+  text-shadow: 0 1px 1px red, 2px 2px 1px #000;
+  color: #ffe9e9;
+}*/
+
+h5 {
+  color : white;
+}
+
+h6 {
+  color : white;
+}
+
+.card-title{
+  color : white;
+}
+
+span {
+  color : white;
+}
+
+.naranja {
+  color: orangered
+}
+
+.verde {
+  color: green;
+}
